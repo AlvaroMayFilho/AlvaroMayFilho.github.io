@@ -2,7 +2,7 @@
    1. VARIÁVEIS & CONFIGURAÇÕES GERAIS
    ========================================= */
 :root {
-    /* Identidade Visual - GitHub Dark Theme inspirado */
+    /* Identidade Visual */
     --bg-dark: #0D1117;       /* Fundo principal */
     --bg-card: #161B22;       /* Fundo dos cards */
     --text-main: #C9D1D9;     /* Texto padrão */
@@ -19,7 +19,7 @@ body {
     color: var(--text-main);
     font-family: var(--font-code);
     line-height: 1.6;
-    overflow-x: hidden; /* Evita rolagem horizontal indesejada */
+    overflow-x: hidden;
 }
 
 /* =========================================
@@ -66,7 +66,7 @@ body {
    3. HERO SECTION
    ========================================= */
 .hero {
-    min-height: 100vh; /* Ocupa tela cheia */
+    min-height: 100vh;
     padding-top: 100px;
     padding-bottom: 50px;
     background: radial-gradient(circle at top right, rgba(22, 27, 34, 1) 0%, rgba(13, 17, 23, 1) 100%);
@@ -220,14 +220,12 @@ body {
     text-align: left;
 }
 
-/* Cores Terminal */
 .code-line { margin-bottom: 8px; line-height: 1.5; }
 .prompt { color: var(--highlight); margin-right: 10px; }
 .command { color: var(--primary); font-weight: bold; }
 .comment { color: #6c757d; font-style: italic; }
 .success { color: #3fb950; }
 
-/* Animações Terminal */
 .cursor { color: var(--highlight); animation: blink 1s step-end infinite; }
 @keyframes blink { 50% { opacity: 0; } }
 
@@ -405,19 +403,68 @@ body {
     color: var(--highlight);
     border-bottom: 1px solid var(--highlight);
 }
-/* Link ItaMobi Desativado */
 .btn-link.text-muted { color: #6c757d !important; border-bottom: none !important; }
 .btn-link.text-muted:hover { cursor: not-allowed; text-decoration: none; }
 
+/* --- NOVO: PROJETO DESTAQUE (FEATURED) --- */
+.featured-project {
+    border: 1px solid var(--highlight);
+    background: linear-gradient(145deg, rgba(22, 27, 34, 1) 0%, rgba(88, 166, 255, 0.1) 100%);
+    position: relative;
+    box-shadow: 0 0 20px rgba(88, 166, 255, 0.15);
+    transform: scale(1.02);
+    z-index: 1;
+}
+
+.featured-project:hover {
+    box-shadow: 0 0 30px rgba(88, 166, 255, 0.3);
+    border-color: #79c0ff;
+    transform: scale(1.04) translateY(-5px);
+}
+
+.featured-project .icon-box {
+    color: var(--highlight);
+    filter: drop-shadow(0 0 5px var(--highlight));
+}
+
+.animate-pulse {
+    animation: pulse-green 2s infinite;
+    box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7);
+}
+
+@keyframes pulse-green {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(40, 167, 69, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(40, 167, 69, 0); }
+}
+
+.btn-highlight-glow {
+    background-color: var(--highlight);
+    color: #0D1117;
+    font-weight: 800;
+    border-radius: 6px;
+    padding: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    text-align: center;
+}
+
+.btn-highlight-glow:hover {
+    background-color: #79c0ff;
+    color: #000;
+    box-shadow: 0 0 15px var(--highlight);
+    transform: translateY(-2px);
+}
+
 /* =========================================
-   6. SEÇÃO CONTATO (NOVA & APRIMORADA)
+   6. SEÇÃO CONTATO
    ========================================= */
 .contact-wrapper {
     max-width: 800px;
     margin: 0 auto;
 }
 
-/* Card Principal de Contato (Glassmorphism) */
 .contact-card {
     background: rgba(22, 27, 34, 0.7);
     border: 1px solid #30363d;
@@ -434,7 +481,6 @@ body {
     transform: translateY(-5px);
 }
 
-/* Efeito de brilho no topo do card */
 .contact-card::before {
     content: '';
     position: absolute;
@@ -453,7 +499,6 @@ body {
     word-break: break-all;
 }
 
-/* Botões Sociais Redondos */
 .social-links {
     display: flex;
     justify-content: center;
@@ -480,7 +525,6 @@ body {
     transform: translateY(-5px) scale(1.1);
 }
 
-/* Cores específicas dos botões sociais */
 .social-btn.github:hover { background-color: #333; border-color: #fff; }
 .social-btn.linkedin:hover { background-color: #0077b5; border-color: #0077b5; }
 .social-btn.whatsapp:hover { background-color: #25D366; border-color: #25D366; }
@@ -497,7 +541,6 @@ footer {
     margin-top: 50px;
 }
 
-/* Ajustes para Mobile e Tablets */
 @media (max-width: 992px) {
     .hero {
         text-align: center;
@@ -510,7 +553,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-    /* Ajustes específicos do card de contato no mobile */
     .contact-card {
         padding: 25px;
         text-align: center;

@@ -16,7 +16,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <link rel="stylesheet" href="style.css">
-</head>
+
+    </head>
 <body>
 
     <nav class="navbar navbar-expand-lg fixed-top">
@@ -150,18 +151,33 @@
             <div class="row">
 
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="project-card">
-                        <div class="icon-box" style="color: #28a745;">
-                            <i class="fas fa-hand-holding-heart"></i>
+                    <div class="project-card featured-project">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div class="icon-box">
+                                <i class="fas fa-heart-pulse"></i>
+                            </div>
+                            <span class="badge bg-success animate-pulse">
+                                <i class="fas fa-circle" style="font-size: 0.5rem; vertical-align: middle;"></i> Online
+                            </span>
                         </div>
-                        <h3>Portal Solidarizar</h3>
-                        <p>Plataforma web completa para gestão de entidades. Antigo projeto OngSplit, refatorado para Solidarizar.</p>
+
+                        <h3>Solidarizar <span style="font-size: 0.6em; color: var(--highlight); vertical-align: middle;">(Oficial)</span></h3>
+                        <p>A plataforma completa de gestão de doações. Landing page oficial e ecossistema integrado em produção.</p>
+
                         <div class="tech-tags">
-                            <span>Django</span>
-                            <span>Python</span>
+                            <span>Produção</span>
+                            <span>Fullstack</span>
                             <span>Web</span>
                         </div>
-                        <a href="https://github.com/AlvaroMayFilho/ongsplit" target="_blank" class="btn-link">Ver repositório <i class="fas fa-arrow-right"></i></a>
+
+                        <div class="d-grid gap-2 mt-3">
+                            <a href="https://www.solidarizar.com.br/" target="_blank" class="btn btn-highlight-glow">
+                                Visitar Site <i class="fas fa-external-link-alt ms-1"></i>
+                            </a>
+                            <a href="https://github.com/AlvaroMayFilho/solidarizar-site" target="_blank" class="btn-link text-center">
+                                Ver código <i class="fab fa-github"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -183,17 +199,17 @@
 
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="project-card">
-                        <div class="icon-box" style="color: #58A6FF;">
-                            <i class="fas fa-globe"></i>
+                        <div class="icon-box" style="color: #28a745;">
+                            <i class="fas fa-server"></i>
                         </div>
-                        <h3>Site Solidarizar</h3>
-                        <p>Landing page institucional e informativa para apresentação do projeto Solidarizar ao público.</p>
+                        <h3>Portal Solidarizar</h3>
+                        <p>O Backend robusto e painel administrativo que alimenta todo o ecossistema (Antigo OngSplit).</p>
                         <div class="tech-tags">
-                            <span>HTML5</span>
-                            <span>CSS3</span>
-                            <span>Frontend</span>
+                            <span>Django</span>
+                            <span>Python</span>
+                            <span>Core</span>
                         </div>
-                        <a href="https://github.com/AlvaroMayFilho/solidarizar-site" target="_blank" class="btn-link">Ver repositório <i class="fas fa-arrow-right"></i></a>
+                        <a href="https://github.com/AlvaroMayFilho/ongsplit" target="_blank" class="btn-link">Ver repositório <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
@@ -310,22 +326,17 @@
 
     <script>
         function copyEmail() {
-            // Pega o texto do email
             const emailText = document.getElementById("emailToCopy").innerText;
-
-            // Copia para a área de transferência
             navigator.clipboard.writeText(emailText).then(() => {
-                // Feedback visual (Muda o texto do botão temporariamente)
                 const btn = document.querySelector("button[onclick='copyEmail()']");
                 const originalText = btn.innerHTML;
 
                 btn.innerHTML = '<i class="fas fa-check"></i> Copiado!';
-                btn.style.backgroundColor = "#238636"; // Verde sucesso
+                btn.style.backgroundColor = "#238636";
                 btn.style.borderColor = "#238636";
 
                 setTimeout(() => {
                     btn.innerHTML = originalText;
-                    // Retorna a cor ao padrão da classe btn-primary-custom (definido no CSS)
                     btn.style.backgroundColor = "";
                     btn.style.borderColor = "";
                 }, 2000);
